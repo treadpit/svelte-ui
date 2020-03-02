@@ -1,0 +1,88 @@
+@import './common/var.scss';
+@import './common/flex.scss';
+@import './mixins/mixin.scss';
+
+$types: input, textarea;
+
+%input-icon {
+  width: 20px;
+  height: 20px;
+  background-color: $color-white;
+  cursor: pointer;
+  color: $input-placeholder-color;
+  @extend .sv-cc;
+  @include pseudo(hover) {
+    color: $color-primary;
+  }
+}
+
+@each $type in $types {
+  @include b($type) {
+    @if $type == 'input' {
+      width: $input-width + $input-padding;
+      max-width: $input-max-width;
+      height: $input-height;
+      padding: 0 $input-padding;
+      @extend .sv-lr, .sv-ac;
+    } @else {
+      width: auto;
+    }
+    border: $input-border;
+    transition: all 0.2s;
+    border-radius: $input-border-radius;
+    box-sizing: border-box;
+    overflow: hidden;
+    @include pseudo(hover) {
+      border-color: $input-hover-border;
+      background-color: $input-focus-fill;
+    }
+    // TODO: 兼容性问题
+    &:focus-within {
+      border-color: $input-focus-border;
+      background-color: $input-focus-fill;
+    }
+    &-inner {
+      font-size: $input-font-size;
+      color: $input-font-color;
+      width: 100%;
+      height: 100%;
+      border: none;
+      @extend .sv-b;
+      @if $type == 'input' {
+        line-height: $input-height;
+      } @else {
+        line-height: $font-line-height-primary;
+        padding: 10px $input-padding;
+      }
+      box-sizing: border-box;
+      @include placeholder() {
+        color: $input-placeholder-color;
+      }
+      @include pseudo(focus) {
+        outline: none;
+      }
+      @include when(disabled) {
+        cursor: not-allowed;
+        color: $input-disabled-color;
+        background-color: $input-disabled-fill;
+        border-color: $input-disabled-border;
+        @include placeholder() {
+          color: $input-disabled-placeholder-color;
+        }
+        @include pseudo(hover) {
+          border-color: $input-disabled-border;
+          background-color: $input-disabled-fill;
+        }
+      }
+    }
+    &-prefix {
+      @extend %input-icon;
+      margin-right: 6px;
+    }
+    &-suffix,
+    &-clear {
+      @extend %input-icon;
+      margin-left: 6px;
+    }
+  }
+}

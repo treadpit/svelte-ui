@@ -1,0 +1,71 @@
+@import './common/var.scss';
+@import './mixins/mixin.scss';
+
+$typeMap: (
+  default: $link-color,
+  primary: $link-primary-font-color,
+  danger: $link-danger-font-color,
+  success: $link-success-font-color,
+  warning: $link-warning-font-color,
+  info: $link-info-font-color
+);
+
+@include b(link) {
+  cursor: pointer;
+  display: inline-block;
+  transition: all 0.1s;
+  font-size: $link-font-size;
+  position: relative;
+  left: 0;
+  top: 0;
+  &.is-disabled {
+    cursor: not-allowed;
+    color: $link-disabled-font-color;
+    &:hover,
+    &:active {
+      color: $link-disabled-font-color;
+      &::after {
+        border-color: transparent;
+      }
+    }
+  }
+  @include b(icon) {
+    margin-right: 4px;
+  }
+}
+
+@mixin link-hover-border($color, $border-color, $type) {
+  &:hover {
+    @if $type == default {
+      color: $link-hover-color;
+    } @else {
+      color: mix($color, $color-white, 70%);
+    }
+    &::after {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 0;
+      border-bottom: $border-width-base $border-style-base
+        mix($border-color, $color-white, 70%);
+    }
+  }
+}
+
+@each $type, $primaryColor in $typeMap {
+  @include b(link_#{$type}) {
+    color: $primaryColor;
+    @if $type == default {
+      @include when(underline) {
+        @include link-hover-border($primaryColor, $link-hover-color, $type);
+      }
+    } @else {
+      @include when(underline) {
+        @include link-hover-border($primaryColor, $primaryColor, $type);
+      }
+    }
+  }
+}

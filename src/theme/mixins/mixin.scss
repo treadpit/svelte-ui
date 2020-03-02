@@ -1,0 +1,44 @@
+@import '../common/var.scss';
+
+@mixin pseudo($pseudo) {
+  @at-root #{&}#{':#{$pseudo}'} {
+    @content;
+  }
+}
+
+@mixin when($state) {
+  @at-root {
+    &_#{$state} {
+      @content;
+    }
+  }
+}
+
+@mixin on($state) {
+  @at-root {
+    &.is-#{$state} {
+      @content;
+    }
+  }
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+@mixin b($block) {
+  $B: $namespace + '-' + $block !global;
+  .#{$B} {
+    @content;
+  }
+}

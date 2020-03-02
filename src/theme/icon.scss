@@ -1,0 +1,116 @@
+@import 'common/var.scss';
+@import './mixins/mixin.scss';
+
+@font-face {
+  font-family: 'sv-iconfont';
+  src: url('#{$font-path}/sv-icons.woff') format('woff'),
+    /* chrome, firefox */ url('#{$font-path}/sv-icons.ttf') format('truetype'); /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+}
+
+@include b(icon) {
+  user-select: none;
+  font-family: 'sv-iconfont' !important;
+  font-style: normal;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: baseline;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@include b(icon-arrow-down) {
+  &:before {
+    content: '\e6eb';
+  }
+}
+
+@include b(icon-add) {
+  &:before {
+    content: '\e6ec';
+  }
+}
+
+@include b(icon-attachent) {
+  &:before {
+    content: '\e6ed';
+  }
+}
+
+@include b(icon-ashbin) {
+  &:before {
+    content: '\e6ef';
+  }
+}
+
+@include b(icon-close) {
+  &:before {
+    content: '\e6f0';
+  }
+}
+
+@include b(icon-download) {
+  &:before {
+    content: '\e6f4';
+  }
+}
+
+@include b(icon-loading) {
+  &:before {
+    content: '\e6fc';
+  }
+}
+
+@include b(icon-reduce) {
+  &:before {
+    content: '\e700';
+  }
+}
+
+@include b(icon-seleted) {
+  &:before {
+    content: '\e707';
+  }
+}
+
+@include b(icon-search) {
+  &:before {
+    content: '\e70a';
+  }
+}
+
+@include b(icon-save) {
+  &:before {
+    content: '\e70b';
+  }
+}
+
+@include b(icon-upload) {
+  &:before {
+    content: '\e70c';
+  }
+}
+
+@include b(icon-loading) {
+  animation: rotating 2s linear infinite;
+}
+
+@include b(icon-right) {
+  margin-left: 5px;
+}
+
+@include b(icon-left) {
+  margin-right: 5px;
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}

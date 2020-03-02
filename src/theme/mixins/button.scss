@@ -1,0 +1,86 @@
+@import './mixin.scss';
+
+@mixin button-variant($color, $background-color, $border-color) {
+  color: $color;
+  background-color: $background-color;
+  border: $border-width-base $border-style-base $border-color;
+  $mix-color: mix($color-white, $background-color, $button-hover-tint-percent);
+  &:hover {
+    $mix-hover-color: mix(
+      $color-white,
+      $background-color,
+      $button-hover-tint-percent
+    );
+    background-color: $mix-hover-color;
+    border-color: $mix-hover-color;
+  }
+  &:actice {
+    $mix-active-color: mix(
+      $color-white,
+      $background-color,
+      $button-hover-tint-percent
+    );
+    background-color: $mix-active-color;
+    border-color: $mix-active-color;
+  }
+  &.is-active {
+    background: mix(
+      $color-black,
+      $background-color,
+      $button-active-shade-percent
+    );
+    border-color: mix(
+      $color-black,
+      $border-color,
+      $button-active-shade-percent
+    );
+    color: $color;
+  }
+  &.is-circle {
+    border-radius: $border-radius-circle;
+    padding: $button-padding-vertical;
+    @include b(icon) {
+      margin-right: 0;
+    }
+  }
+  &.is-disabled {
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      cursor: not-allowed;
+      color: $color-white;
+      background-color: mix($background-color, $color-white);
+      border-color: mix($border-color, $color-white);
+    }
+  }
+}
+
+@mixin button-size(
+  $font-size,
+  $padding-vertical,
+  $padding-horizontal,
+  $border-radius
+) {
+  font-size: $font-size;
+  padding: $padding-vertical $padding-horizontal;
+  &_round {
+    border-radius: 20px;
+  }
+}
+
+@mixin button-group($margin-direction, $first-border, $last-border) {
+  @include b(button) {
+    border-radius: 0;
+    margin-#{$margin-direction}: 1px;
+    &:first-child {
+      border-#{$first-border}-radius: $border-radius-base;
+      border-top-left-radius: $border-radius-base;
+    }
+    &:last-child {
+      border-bottom-right-radius: $border-radius-base;
+      border-#{$last-border}-radius: $border-radius-base;
+      margin-#{$margin-direction}: 0;
+    }
+  }
+}

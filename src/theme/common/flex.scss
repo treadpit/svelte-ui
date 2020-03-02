@@ -1,0 +1,42 @@
+.sv-b {
+  display: flex;
+}
+
+.sv-lr {
+  @extend .sv-b;
+  flex-direction: row;
+}
+
+.sv-rl {
+  @extend .sv-b;
+  flex-direction: row-reverse;
+}
+
+.sv-tb {
+  @extend .sv-b;
+  flex-direction: column;
+}
+
+.sv-ac {
+  align-items: center;
+}
+
+.sv-pc {
+  justify-content: center;
+}
+
+.sv-pb {
+  justify-content: space-between;
+}
+
+.sv-pa {
+  justify-content: space-around;
+}
+
+.sv-cc {
+  @extend .sv-b, .sv-ac, .sv-pc;
+}
+
+.sv-flex {
+  flex: 1;
+}

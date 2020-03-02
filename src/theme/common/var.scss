@@ -1,0 +1,182 @@
+$namespace: 'sv';
+
+$color-primary: #409eff !default;
+$color-white: #ffffff !default;
+$color-black: #000000 !default;
+$color-success: #67c23a !default;
+$color-warning: #e6a23c !default;
+$color-danger: #f56c6c !default;
+$color-info: #909399 !default;
+$color-transparent: transparent !default;
+
+$color-primary-light-1: mix($color-white, $color-primary, 30%) !default;
+$color-success-light-1: mix($color-white, $color-success, 30%) !default;
+$color-warning-light-1: mix($color-white, $color-warning, 30%) !default;
+$color-danger-light-1: mix($color-white, $color-danger, 30%) !default;
+$color-info-light-1: mix($color-white, $color-info, 30%) !default;
+
+$color-primary-light-2: mix($color-white, $color-primary, 50%) !default;
+$color-success-light-2: mix($color-white, $color-success, 80%) !default;
+$color-warning-light-2: mix($color-white, $color-warning, 80%) !default;
+$color-danger-light-2: mix($color-white, $color-danger, 80%) !default;
+$color-info-light-2: mix($color-white, $color-info, 80%) !default;
+
+$color-primary-lighter: mix($color-white, $color-success, 90%) !default;
+$color-success-lighter: mix($color-white, $color-success, 90%) !default;
+$color-warning-lighter: mix($color-white, $color-warning, 90%) !default;
+$color-danger-lighter: mix($color-white, $color-danger, 90%) !default;
+$color-info-lighter: mix($color-white, $color-info, 90%) !default;
+
+$color-text-primary: #303133 !default;
+$color-text-regular: #606266 !default;
+$color-text-secondary: #909399 !default;
+$color-text-placeholder: #c0c4cc !default;
+
+$border-color-base: #dcdfe6 !default;
+$border-color-light: #e4e7ed !default;
+$border-color-lighter: #ebeef5 !default;
+$border-color-extra-light: #f2f6fc !default;
+
+$background-color-base: #f5f7fa !default;
+
+$link-color: $color-primary-light-1 !default;
+$link-hover-color: $color-primary !default;
+
+$border-width-base: 1px !default;
+$border-style-base: solid !default;
+$border-color-hover: $color-text-placeholder !default;
+$border-base: $border-width-base $border-style-base $border-color-base !default;
+
+$border-radius-base: 4px !default;
+$border-radius-small: 2px !default;
+$border-radius-circle: 100% !default;
+$border-radius-zero: 0 !default;
+
+$fill-base: $color-white !default;
+
+$box-shadow-base: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04) !default;
+$box-shadow-dark: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.12) !default;
+$box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1) !default;
+
+$font-path: 'fonts' !default;
+$font-display: 'auto' !default;
+$font-size-extra-large: 20px !default;
+$font-size-large: 18px !default;
+$font-size-medium: 16px !default;
+$font-size-base: 14px !default;
+$font-size-small: 13px !default;
+$font-size-extra-small: 12px !default;
+$font-weight-primary: 500 !default;
+$font-weight-secondary: 100 !default;
+$font-line-height-primary: 24px !default;
+$font-line-height-secondary: 16px !default;
+$font-color-disabled-base: #bbb !default;
+
+$size-base: 14px !default;
+
+$index-normal: 1 !default;
+$index-top: 1000 !default;
+$index-popper: 2000 !default;
+
+$disabled-fill-base: $background-color-base !default;
+$disabled-color-base: $color-text-placeholder !default;
+$disabled-border-base: $border-color-light !default;
+
+$icon-color: #666 !default;
+$icon-color-base: $color-info !default;
+
+$input-font-size: $font-size-base !default;
+$input-font-color: $color-text-regular !default;
+$input-width: 160px !default;
+$input-height: 40px !default;
+$input-padding: 15px !default;
+$input-border: $border-base !default;
+$input-border-color: $border-color-base !default;
+$input-border-radius: $border-radius-base !default;
+$input-border-color-hover: $border-color-hover !default;
+$input-background-color: $color-white !default;
+$input-icon-color: $color-text-placeholder !default;
+$input-placeholder-color: $color-text-placeholder !default;
+$input-max-width: 314px !default;
+
+$input-hover-border: $border-color-hover !default;
+$input-clear-hover-color: $color-text-secondary !default;
+
+$input-focus-border: $color-primary !default;
+$input-focus-fill: $color-white !default;
+
+$input-disabled-fill: $disabled-fill-base !default;
+$input-disabled-border: $disabled-border-base !default;
+$input-disabled-color: $disabled-color-base !default;
+$input-disabled-placeholder-color: $color-text-placeholder !default;
+
+$input-medium-font-size: 14px !default;
+$input-medium-height: 36px !default;
+$input-small-font-size: 13px !default;
+$input-small-height: 32px !default;
+$input-mini-font-size: 12px !default;
+$input-mini-height: 28px !default;
+
+$button-font-size: $font-size-base !default;
+$button-font-weight: $font-weight-primary !default;
+$button-border-radius: $border-radius-base !default;
+$button-padding-vertical: 12px !default;
+$button-padding-horizontal: 20px !default;
+
+$button-medium-font-size: $font-size-base !default;
+$button-medium-border-radius: $border-radius-base !default;
+$button-medium-padding-vertical: 10px !default;
+$button-medium-padding-horizontal: 20px !default;
+
+$button-small-font-size: 12px !default;
+$button-small-border-radius: #{$border-radius-base - 1} !default;
+$button-small-padding-vertical: 9px !default;
+$button-small-padding-horizontal: 15px !default;
+$button-mini-font-size: 12px !default;
+$button-mini-border-radius: #{$border-radius-base - 1} !default;
+$button-mini-padding-vertical: 7px !default;
+$button-mini-padding-horizontal: 15px !default;
+
+$button-default-font-color: $color-text-regular !default;
+$button-default-background-color: $color-white !default;
+$button-default-border-color: $border-color-base !default;
+
+$button-disabled-font-color: $color-text-placeholder !default;
+$button-disabled-background-color: $color-white !default;
+$button-disabled-border-color: $border-color-lighter !default;
+
+$button-primary-border-color: $color-primary !default;
+$button-primary-font-color: $color-white !default;
+$button-primary-background-color: $color-primary !default;
+$button-success-border-color: $color-success !default;
+$button-success-font-color: $color-white !default;
+$button-success-background-color: $color-success !default;
+$button-warning-border-color: $color-warning !default;
+$button-warning-font-color: $color-white !default;
+$button-warning-background-color: $color-warning !default;
+$button-danger-border-color: $color-danger !default;
+$button-danger-font-color: $color-white !default;
+$button-danger-background-color: $color-danger !default;
+$button-info-border-color: $color-info !default;
+$button-info-font-color: $color-white !default;
+$button-info-background-color: $color-info !default;
+
+$button-hover-tint-percent: 20% !default;
+$button-active-shade-percent: 10% !default;
+
+$badge-background-color: $color-danger !default;
+$badge-radius: 10px !default;
+$badge-font-size: 12px !default;
+$badge-padding: 6px !default;
+$badge-size: 18px !default;
+
+$link-font-size: $font-size-base !default;
+$link-font-weight: $font-weight-primary !default;
+$link-default-font-color: $color-text-regular !default;
+$link-default-active-color: $color-primary !default;
+$link-disabled-font-color: $color-text-placeholder !default;
+$link-primary-font-color: $color-primary !default;
+$link-success-font-color: $color-success !default;
+$link-warning-font-color: $color-warning !default;
+$link-danger-font-color: $color-danger !default;
+$link-info-font-color: $color-info !default;
